@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <link rel= "stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-container">
+            <ul>
+                
+                <li onclick="userList()"> View Users</li>
+            </ul>
+        </div>
+
+        <img class="overlay-img" src="./assests/background.png" alt=" b1">
+
+        <img  class="floating-circle"src="./assests/Group 17.svg" alt="">
+
+        <!-- ************************************************** -->
+        <div class="main-wrapper">
+            <div class="search-container">
+                <div class="logo">
+                    <img src="./assests/Group 3.png" alt="">
+                </div>
+
+                <div class="search-bar">
+                    <input id = "ip" type="text" >
+                    <button onclick="search()">SEARCH</button>
+                </div>
+
+                <div class="info">
+                    <span>Locate your IP Address, and find out more about you computer <br> with Queritel IP locator </span>
+                </div>
+            </div>
+
+            <!-- ************************************************** -->
+
+            <div  id="search" class="search-result-container">
+              
+                <div class="result-wrapper">
+                  
+                  <div  onclick="closeSearch()" class="close">X</div>
+                    <h1 id="IP-heading">IP Address Found!</h1>
+                    <div class="items">
+                        <div> 
+                            <h2>IP Address: <span id = "address"> </span> </h2>
+                            <h2>Country NAME: <span id = "country">  </span></h2>                                                        
+                        </div>
+                        <div> <h2>Country Code: <span id = "countryCode"></span></h2></div>
+                        <div class="flag-container">
+                            <img  id="countryFlag" alt="country-flag">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="userResult" class="user-result-container">
+              <div class="user-wrapper">
+                <div  onclick = "closeUserModal()" id="user-close" class="close">X</div>
+                  <h1 id="user-heading">users Found!</h1>
+                  <div id = "user-items" class="user-items">
+                     
+                  </div>
+              </div>
+          </div>
+
+
+          <div id="user-details-result-container" class="user-details-result-container">
+            <div class="user-details-wrapper">
+                <div  onclick="closeUserDetailsModal()" id="user-details-close" class="close">X</div>
+                <h1 id="user-details-heading">users Found!</h1>
+                <div class="user-details-items">
+                    <div> 
+                        <h2 >First Name: <span id= 'firstName'></span> </h2> 
+                        <h2 >Last Name: <span id= 'lastName'> </span></h2>
+                        <h2 >Display Name: <span id= 'displayName'></span></h2>
+                        <h2 >Country Name: <span id= 'countryName'> </span></h2>
+                        <h2 >Ip Address: <span id= 'ipAddress'> </span></h2>
+                        <h2 >Country: <span id= 'countryCode1'></span></h2>
+                    </div>
+                    <div class="flag-container"> 
+                      <img  id="countryFLAG" alt="country-flag">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>
