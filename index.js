@@ -12,13 +12,13 @@
         
         myHTML += 
         '<div >'+
-                `<h2> First Name  <span>${JSON.stringify(data[i].first_name)}</span> </h2>`+
+                `<h2> First Name  <span>${data[i].first_name}</span> </h2>`+
         '</div>' +    
         '<div>'+ 
-                `<h2>Last Name: <span> ${JSON.stringify(data[i].last_name)}</span></h2>`+        
+                `<h2>Last Name: <span> ${data[i].last_name}</span></h2>`+        
        '</div>'+
        '<div>'+      
-              `<h2>Display Name: <span>${JSON.stringify(data[i].display_name)}</span></h2>`+  
+              `<h2>Display Name: <span>${data[i].display_name}</span></h2>`+  
         '</div>'+
         '<div>'+      
               `<button onclick="userDetail(${data[i].display_name})"> More Info </button>`+
@@ -65,12 +65,19 @@ console.log('num',num);
      fetch(`https://api.queritel.com/api/test-lab/hernandez/query_ip.php?ip=${document.getElementById('ip').value}`).then( (response) =>{        
        return response.json();
              }).then(function (data) {    
-                 console.log(data);                     
-                document.getElementById("country").innerHTML = data.country_name;
-                document.getElementById("address").innerHTML = data.ip_address;
-                document.getElementById("countryCode").innerHTML = data.country_code;
-                document.getElementById("countryFlag").src = data.country_flag;                   
-                viewFlag(data.country_flag);
+                console.log('data',data);
+                 console.log('data',data.headers);
+                if(data != null )
+                {
+                    document.getElementById("country").innerHTML = data.country_name;
+                    document.getElementById("address").innerHTML = data.ip_address;
+                    document.getElementById("countryCode").innerHTML = data.country_code;
+                    document.getElementById("countryFlag").src = data.country_flag;                   
+                    viewFlag(data.country_flag);
+                }else{
+                    alert('ip invalid. please use this format format: "8.8.8.8');
+                }
+                
             }).catch(function (err) {
                 	console.warn('Something went wrong.', err);
                 });
